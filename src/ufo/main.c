@@ -1,3 +1,13 @@
+#include <SDL3/SDL.h>
+
 int main(int argc, const char *argv[]) {
-    return 0;
+  (void)argc;
+  (void)argv;
+
+  if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+    return 1;
+  }
+
+  SDL_Quit();
+  return 0;
 }
