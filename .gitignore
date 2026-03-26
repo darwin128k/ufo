@@ -1,0 +1,3 @@
+# Build and editor artifacts
+.cache/
+build/

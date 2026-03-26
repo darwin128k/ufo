@@ -1,0 +1,5 @@
+#
+# Force LF line endings in the repository.
+# With `text=auto`, Git will only apply conversions to files it detects as text.
+#
+* text=auto eol=lf
