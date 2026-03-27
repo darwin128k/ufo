@@ -12,9 +12,20 @@ set(SDL_TEST_LIBRARY OFF CACHE BOOL "" FORCE)
 set(SDL_TESTS OFF CACHE BOOL "" FORCE)
 set(SDL_EXAMPLES OFF CACHE BOOL "" FORCE)
 
-add_executable(ufo src/ufo/main.c)
+add_executable(ufo 
+                    src/ufo/main.c
+                    src/ufo/driver.c
+                    src/ufo/entity.c
+                    src/ufo/window.c
+                    src/ufo/layer.c
+                    src/ufo/display.c
+                    src/ufo/monitor.c
+
+                    src/ufo/driver/gl.c
+                    src/ufo/driver/sdl.c
+)
 target_include_directories(ufo PRIVATE
-  "${CMAKE_CURRENT_SOURCE_DIR}/src/ufo"
+  "${CMAKE_CURRENT_SOURCE_DIR}/include"
   "${CMAKE_CURRENT_SOURCE_DIR}/lib/SDL3/include"
 )
 
