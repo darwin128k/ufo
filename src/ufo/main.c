@@ -1,4 +1,6 @@
-#include <ufo/ufo.h>
+#include <ufo/app.h>
+#include <ufo/driver/sdl.h>
+#include <ufo/driver/sdl/initializer.h>
 
 static void on_window_event(ufo_window_t *window, const SDL_Event *event,
                             void *userdata) {
@@ -15,7 +17,9 @@ int main(int argc, const char *argv[]) {
     (void)argc;
     (void)argv;
 
-    if (!SDL_Init(SDL_INIT_VIDEO)) {
+    ufo_driver_sdl_t sdl_driver = ufo_driver_sdl_initializer;
+    ufo_app_t app;
+    if (!ufo_app_init(&app, &sdl_driver.base)) {
         return 1;
     }
 
@@ -26,11 +30,11 @@ int main(int argc, const char *argv[]) {
 
     ufo_window_show(&window);
 
-    while (!ufo_events_pump()) {
+    while (!ufo_app_pump_events(&app)) {
     }
 
     ufo_window_destroy(&window);
 
-    SDL_Quit();
+    ufo_app_shutdown(&app);
     return 0;
 }

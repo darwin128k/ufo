@@ -15,6 +15,9 @@ struct ufo_window {
     SDL_Window *handle;
     ufo_window_event_cb event_cb;
 };
+
+#define UFO_WINDOW_SELF_PROP "org.ufo.window.self"
+
 void ufo_window_create(ufo_window_t *self, const char *title,
                        const ufo_size_t *size);
 void ufo_window_get_size(ufo_window_t *self, ufo_size_t *size);

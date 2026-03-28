@@ -1,5 +1,5 @@
 #include <ufo/null.h>
-#include <ufo/ufo.h>
+#include <ufo/window.h>
 
 void ufo_window_attach(ufo_window_t *self) {
     SDL_PropertiesID props = SDL_GetWindowProperties(self->handle);
