@@ -3,14 +3,19 @@
 
 #include <stdbool.h>
 #include <ufo/driver.h>
+#include <ufo/monitor.h>
 #include <ufo/window.h>
+
+#define UFO_MAX_WINDOWS 1024
 
 typedef struct ufo_app {
     ufo_driver_t *driver;
-    void *monitor;
+    ufo_window_t windows[UFO_MAX_WINDOWS];
+    const char *application_id;
 } ufo_app_t;
 
-bool ufo_app_init(ufo_app_t *app, ufo_driver_t *driver);
+bool ufo_app_init(ufo_app_t *app, ufo_driver_t *driver,
+                  const char *application_id);
 void ufo_app_shutdown(ufo_app_t *app);
 
 void ufo_app_send_event(ufo_app_t *app, ufo_window_t *window,

@@ -1,9 +1,10 @@
 #include <ufo/app.h>
 #include <ufo/null.h>
 
-bool ufo_app_init(ufo_app_t *app, ufo_driver_t *driver) {
+bool ufo_app_init(ufo_app_t *app, ufo_driver_t *driver,
+                  const char *application_id) {
     app->driver = driver;
-    app->monitor = ufo_null;
+    app->application_id = application_id;
     return ufo_driver_init(app->driver);
 }
 
