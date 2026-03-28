@@ -1,5 +1,5 @@
+#include <lh/null.h>
 #include <ufo/app.h>
-#include <ufo/null.h>
 
 bool ufo_app_init(ufo_app_t *app, ufo_driver_t *driver,
                   const char *application_id) {
@@ -32,8 +32,8 @@ bool ufo_app_pump_events(ufo_app_t *app) {
         if (sdl_window != NULL) {
             SDL_PropertiesID props = SDL_GetWindowProperties(sdl_window);
             ufo_window_t *window = (ufo_window_t *)SDL_GetPointerProperty(
-                props, UFO_WINDOW_SELF_PROP, NULL);
-            window->event_cb(window, &event, NULL);
+                props, UFO_WINDOW_SELF_PROP, lh_null);
+            window->event_cb(window, &event, lh_null);
         }
     }
 

@@ -13,6 +13,8 @@ set(SDL_TESTS OFF CACHE BOOL "" FORCE)
 set(SDL_EXAMPLES OFF CACHE BOOL "" FORCE)
 
 add_executable(ufo 
+                    src/lh/array.c
+
                     src/ufo/main.c
                     src/ufo/app.c
                     src/ufo/driver.c

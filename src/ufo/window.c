@@ -1,4 +1,4 @@
-#include <ufo/null.h>
+#include <lh/null.h>
 #include <ufo/window.h>
 
 void ufo_window_attach(ufo_window_t *self) {
@@ -8,9 +8,9 @@ void ufo_window_attach(ufo_window_t *self) {
 
 void ufo_window_detach(ufo_window_t *self) {
     SDL_PropertiesID props = SDL_GetWindowProperties(self->handle);
-    SDL_SetPointerProperty(props, UFO_WINDOW_SELF_PROP, ufo_null);
-    self->handle = ufo_null;
-    self->event_cb = ufo_null;
+    SDL_SetPointerProperty(props, UFO_WINDOW_SELF_PROP, lh_null);
+    self->handle = lh_null;
+    self->event_cb = lh_null;
 }
 
 void ufo_window_create(ufo_window_t *self, const char *title,
