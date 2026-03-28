@@ -14,6 +14,7 @@ set(SDL_EXAMPLES OFF CACHE BOOL "" FORCE)
 
 add_executable(ufo 
                     src/ufo/main.c
+                    src/ufo/ufo.c
                     src/ufo/driver.c
                     src/ufo/entity.c
                     src/ufo/window.c
